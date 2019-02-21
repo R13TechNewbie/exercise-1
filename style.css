@@ -1,0 +1,267 @@
+/*
+Ini adalah file css, css yang dari kemaren kita pelajari itu namanya inline CSS.
+yang di file kelompok "java.html" punya arief itu namanya internal CSS.
+nah yang disini namanya external CSS.
+
+fungsinya sama aja, cuma bedanya yang biasa diajarin pak nurbo itu dia ada di dalam perintahnya.
+tapi klo di punya arief itu terpisah kan, CSSnya ngga di dlm perintah, tapi di atas diletakkan di <style> di dalam bagian <head>
+
+nah klo disini sebenarnya sama seperti punya arief, cuma bedanya di letakkan di file yang berbeda, dan di htmlnya juga perlu dikasih perintah "panggil file CSS ini" dengan perintah " <link rel="stylesheet" href="style.css"> " yang style.css di dalam href harus diganti sesuai dengan nama file CSSnya.
+
+dalam internal dan external CSS, formatnya adalah seperti berikut:
+
+(elemen pada daerah ini) {
+	(perintah)
+}
+
+selain itu, ada juga perintah khusus pada (elemen pada daerah ini)
+body {    = itu menandakan bahwa dalam bagian <body> akan kena perintah dibawah ini.
+}
+
+.judul = itu menandakan bahwa setiap elemen yang termasuk dalam kelas judul kena perintah dibawah ini. (. sebelum nama kelas menandakan bahwa itu adalah kelas.)
+
+#wrapper = itu menandakan bahwa elemen yang memiliki id wrapper kena perintah dibawah ini. (# sebelum nama id menandakan bahwa itu adalah id.)
+
+	
+ul.wrapper = itu menandakan bahwa <ul> yang termasuk dalam kelas wrapper kena perintah dibawah ini.
+
+li.wrapper a:hover = itu menandakan bahwa <li> yang termasuk dalam kelas wrapper dan khusus yang memiliki <a> di dalam <li>, dan ketika mouse berada di atas <a> (perintah :hover), kena perintah dibawah ini.
+
+*/
+
+
+* { /*untuk semua elemen*/
+	box-sizing: border-box; /*perintah CSS3 untuk menyesuaikan padding dan border elemen yang sesuai dengan total panjang dan lebar dari elemen tersebut */
+}
+
+body { /*untuk semua elemen dalam body*/
+	margin: 0; /*perintah untuk memberikan jarak batas dengan elemen lain*/
+}
+
+.kolom1 {width: 8.33%;}
+.kolom2 {width: 16.66%;}
+.kolom3 {width: 25%;}
+.kolom4 {width: 33.33%;}
+.kolom5 {width: 41.66%;}
+.kolom6 {width: 50%;}
+.kolom7 {width: 58.33%;}
+.kolom8 {width: 66.66%;}
+.kolom9 {width: 75%;}
+.kolom10 {width: 83.33%;}
+.kolom11 {width: 91.66%;}
+.kolom12 {width: 100%;}
+.baris {padding: 15px;}
+/* wrapper */
+
+#wrapper { /*untuk id wrapper*/
+	font-family: helvetica; /*perintah yang menentukan font yang digunakan adalah helvetica*/
+	font-size: 16px; /*perintah untuk menentukan ukuran font*/
+	background-color: #c96108; /*perintah untuk menentukan warna background*/
+	padding: 10px; /*perintah untuk menentukan luas (space) pada suatu elemen*/
+	color: white; /*perintah menentukan warna*/
+	text-align: right; /*perintah menentukan alignment pada teks (rata kanan, rata kiri, rata tengah)*/
+}
+
+ul.wrapper {
+	list-style-type: none; /*menentukan penanda list (dengan bullet atau angka). jika none, maka tidak memakai tanda*/
+}
+
+li.wrapper {
+	float: right; /*perintah mengatur arah list. dalam hal ini, membuat list tidak menurun, tetapi menyamping dari kanan ke kiri*/
+	transform: translateY(-70%); /*perintah menggeser elemen. dalam hal ini menggeser secara vertikal keatas sebanyak 70%.*/
+}
+
+li.wrapper a {
+	color: white; /*perintah menentukan warna*/
+	padding-right: 30px; /*perintah menentukan luas ke kanan*/
+	padding-bottom: 0px; /*perintah menentukan luas ke bawah*/
+	text-decoration: none; /*perintah menghilangkan garis bawah pada <a href>*/
+	outline: none; /*perintah menghilangkan garis putih putus-putus yang mengelilingi <a href> ketika di klik*/
+}
+
+li.wrapper a:hover {
+	text-shadow:
+	-1px -1px 0 rgba(255,255,255,.3),
+	 1px -1px 0 rgba(255,255,255,.3),
+    	-1px 1px 0 rgba(255,255,255,.3),
+	 1px 1px 0 rgba(255,255,255,.3);  /*perintah memberikan outline pada teks, dalam hal ini berwarna hitam (ditandai dengan #000) */
+}
+
+/*header*/
+
+#header {
+	padding: 80px; /*perintah untuk menentukan luas (space) pada suatu elemen*/
+	color: white; /*perintah menentukan warna*/
+	background-image: url("backgrou.jpg"); /*perintah menentukan background gambar*/
+	background-size: Auto 1000px; /*perintah menentukan ukuran background*/
+}
+
+#gambar_header {
+	min-height: 20px;
+	width: 25%;
+	border-radius: 50%;
+	float: left;
+	border: 10px solid rgba(0,0,0,.3);
+}
+
+.judul {
+	text-align: center; /*perintah menentukan alignment pada teks (rata kanan, rata kiri, rata tengah)*/
+	font-family: verdana; /*perintah yang menentukan font yang digunakan adalah verdana*/
+	
+}
+
+#judul1 {
+	font-size: 4.2vmax;; /*perintah untuk menentukan ukuran font*/
+}
+
+#judul2 {
+	font-size: 2.2vmax; /*perintah untuk menentukan ukuran font*/
+}
+
+/*MainWord*/
+
+#mainword {
+	text-align: center;
+	font-size: 20px;
+	font-family: sans-serif;
+	color: white;
+	background-color: #69340f;
+	padding: 5px;
+	text-align: center;
+}
+
+@media (max-width: 420px) {
+	#mainword {
+		font-size: 4vw;
+	}
+} 
+
+.baris {
+	clear: both;
+}
+
+/*konten*/
+
+.konten {
+	background-color: white; /*perintah untuk menentukan warna background*/
+	height: auto;
+	float: left;
+}
+
+@media (max-width: 780px) {
+	.konten {
+		float: inherit;
+		clear: both;
+		width: 100%;
+	}
+}
+
+article.konten {
+	float: left; /*perintah mengatur arah list. dalam hal ini, membuat list tidak menurun, tetapi menyamping dari kiri ke kanan*/
+	padding: 15px 5px 15px 5px; /*perintah untuk menentukan luas (space) pada suatu elemen*/
+	max-height: 400;
+	font-size: 1.2vw;
+}
+
+
+@media (max-width: 780px) {
+	article.konten {
+		font-size: 3vw;
+		max-height: auto;
+	}
+}
+
+
+.kotak {
+	margin: 0px 5px 0px 5px;
+	min-height: 350px;		
+	border: 1px solid transparent;
+	background-color: rgba(210,125,30,0.6);
+}
+
+@media (max-width: 780px) {
+	.kotak {
+		min-height: auto;
+	}
+}
+
+article.konten h1 {
+	text-align: center; /*perintah menentukan alignment pada teks (rata kanan, rata kiri, rata tengah)*/
+	font-family: helvetica;
+}
+
+article.konten p {
+	margin: 0 50px 0 50px;
+}
+
+@media (max-width: 780px) {
+	article.konten p {
+		margin: 0 50px 30px 50px;
+	}
+}
+
+
+.konten a {
+	padding: 15px 10px 15px 10px;
+	background-color: orange;
+	text-decoration: none;
+	outline: none;
+	color: white;
+	font-family: helvetica;
+}
+
+article.konten a:hover {
+	border: 2px solid rgba(255,255,255,.3);
+}
+
+.header_biodata {
+	margin: 20px 0 20px 0;
+	background-color: #69340f;
+	padding: 1px;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	clear: both;
+}
+
+
+.kolom4 img {
+	height: 50%;
+	width: 50%;
+	float: left;
+	margin: 20px 0 20px 200px;
+}
+
+.kolom8 {
+	float: left;
+	transform: translateY(-8%);
+}
+
+.isi_biodata table, td {
+	text-align: left;
+	border-collapse: collapse;
+	border-bottom: 1px solid black;
+	padding: 15px;
+	margin-left: 20px;
+}
+
+/*blankSpace*/
+
+.blankSpace {
+	padding: 20px;
+}
+
+
+/*footer*/
+
+footer {
+	text-align: center;
+	font-family: helvetica;
+	color: white;
+	font-size: 16px;
+	background-color: #c96108;
+	padding: 20px;
+	margin-top: 20px;
+	clear: both;
+}
+
